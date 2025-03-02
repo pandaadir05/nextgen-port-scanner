@@ -1,8 +1,3 @@
-Below is a clean, organized version of your README in markdown format. You can copy this into your README.md file. Feel free to modify it further to suit your style and project specifics.
-
----
-
-```markdown
 # NextGen Port Scanner
 
 ![NextGen Port Scanner Banner](https://via.placeholder.com/1200x300?text=NextGen+Port+Scanner)
