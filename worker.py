@@ -3,7 +3,7 @@ from celery import Celery
 import ai_analysis
 import scanner
 
-celery_app = Celery("tasks", broker="pyamqp://guest@localhost//")
+celery_app = Celery("tasks", broker="amqp://guest:guest@rabbitmq:5672//")
 
 @celery_app.task
 def distributed_scan(ip: str, start_port: int, end_port: int):

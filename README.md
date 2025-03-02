@@ -1,7 +1,5 @@
 # NextGen Port Scanner
 
-![NextGen Port Scanner Banner](https://via.placeholder.com/1200x300?text=NextGen+Port+Scanner)
-
 **NextGen Port Scanner** is an advanced, AI-powered port scanning tool designed for cybersecurity professionals and enthusiasts. This project uses asynchronous scanning, machine learning-based vulnerability analysis, and a distributed architecture to deliver fast, accurate results. A modern React dashboard provides real-time visualization, and everything is containerized with Docker for seamless deployment.
 
 ---
@@ -186,8 +184,3 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 *Happy Scanning!*
-```
-
----
-
-This version of the README is structured with clear headings, concise explanations, and all key sections you need. You can further customize details like repository URLs, images, and additional instructions as your project evolves.
