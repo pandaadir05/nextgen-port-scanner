@@ -1,7 +1,8 @@
 fastapi
 uvicorn
 pydantic
+celery
 scikit-learn
 numpy
-celery
+pandas
 redis

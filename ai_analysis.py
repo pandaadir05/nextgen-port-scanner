@@ -1,3 +1,4 @@
+# ai_analysis.py
 import pickle
 import os
 from vuln_model import train_dummy_model
@@ -6,7 +7,6 @@ MODEL_PATH = "model.pkl"
 
 def load_model():
     if not os.path.exists(MODEL_PATH):
-        # Train and save a dummy model if it doesn't exist
         vec, clf = train_dummy_model()
         with open(MODEL_PATH, "wb") as f:
             pickle.dump((vec, clf), f)
@@ -16,9 +16,13 @@ def load_model():
 vectorizer, model = load_model()
 
 def analyze_banner(banner: str) -> dict:
+    """
+    Analyzes the service banner using the ML model.
+    Returns a dictionary with the banner and vulnerability prediction.
+    """
     X = vectorizer.transform([banner])
-    pred = model.predict(X)[0]
-    vulnerability = "Vulnerable" if pred == 1 else "Not Vulnerable"
+    prediction = model.predict(X)[0]
+    vulnerability = "Vulnerable" if prediction == 1 else "Not Vulnerable"
     return {
         "banner": banner,
         "vulnerability": vulnerability

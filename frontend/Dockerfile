@@ -1,17 +1,15 @@
-# Use a lightweight Node.js image
+# frontend/Dockerfile
 FROM node:16-alpine
 
 # Install 'serve' globally to serve static files
 RUN npm install -g serve
 
-# Copy the production build into the container
+# Copy the production build (make sure to build before building the Docker image)
 COPY build /app/build
 
-# Set the working directory
 WORKDIR /app
 
-# Expose port 3000
 EXPOSE 3000
 
-# Start the static file server to serve the build folder
+# Serve the build directory on port 3000
 CMD ["serve", "-s", "build", "-l", "3000"]

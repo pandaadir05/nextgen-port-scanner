@@ -1,3 +1,4 @@
+# server.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -7,10 +8,10 @@ import ai_analysis
 
 app = FastAPI(title="NextGen Port Scanner API")
 
-# Add CORS middleware
+# Allow CORS for your frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # or use ["*"] for all origins
+    allow_origins=["http://localhost:3000"],  # Adjust as needed or use ["*"] for all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,7 +23,7 @@ class ScanRequest(BaseModel):
     end_port: int = 1024
 
 @app.post("/scan")
-async def scan(request: ScanRequest):
+async def scan_endpoint(request: ScanRequest):
     results = await scanner.scan_ports(request.ip, request.start_port, request.end_port)
     open_ports = []
     for port, is_open, banner in results:
